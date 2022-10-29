@@ -1,3 +1,13 @@
+const WinsMessage = (props) => {
+  if (!props.wins) {
+    return <h2 className="zero">Currently with no wins</h2>
+  } else if (props.wins === 1) {
+    return <h2>Currently at 1 win.</h2>
+  } else {
+    return <h2>Currently at {props.wins} wins </h2>
+  }
+
+};
 const Player = (props) => {
   console.log(props)
 
@@ -8,12 +18,7 @@ const Player = (props) => {
         {props.firstName} <span>{props.gamerTag}</span> {props.lastName}
 
       </h1>
-      {/* To be shown whern there are no wins*/}
-      <h2 className="zero">Currently with no wins</h2>
-      {/* To be shown whern there is 1 win*/}
-      <h2>Currently at 1 win</h2>
-      {/* To be shown whern there is more than one win*/}
-      <h2>Currently at {props.wins} wins</h2>
+      <WinsMessage wins={props.wins} />
     </article>
     )
 };
