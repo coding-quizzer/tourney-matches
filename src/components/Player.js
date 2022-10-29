@@ -9,8 +9,6 @@ const WinsMessage = (props) => {
 
 };
 const Player = (props) => {
-  console.log(props)
-
   return (
     <article className="Player">
       <h1>
