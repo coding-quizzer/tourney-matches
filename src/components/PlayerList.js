@@ -4,14 +4,12 @@ import Player from "./Player";
 import { preparePlayerData, addWinsToPlayers } from "../helpers/playerHelpers";
 
 const PlayerList = (props) => {
-  console.log(playerData);
-  const playerDataArray = preparePlayerData(playerData);
-  console.log(playerDataArray);
-  console.log(addWinsToPlayers(playerDataArray, matchData));
+  const playerDataArray = addWinsToPlayers(preparePlayerData(playerData), matchData);
+  const onePlayer = playerDataArray[0];
   return (
     <section className="PlayerList">
       <h1>Current participating players</h1>
-      <Player />
+      <Player gamerTag={onePlayer.gamerTag} firstName={onePlayer.firstName} lastName={onePlayer.lastName} wins={onePlayer.wins}/>
     </section>
   )
   
