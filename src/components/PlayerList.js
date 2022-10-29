@@ -1,11 +1,11 @@
 import Player from "./Player";
 
 const PlayerList = (props) => {
-  const onePlayer = props.playerDataArray[0];
+  const matches = props.playerDataArray.map(player => <Player key={player.gamerTag} gamerTag={player.gamerTag} firstName={player.firstName} lastName={player.lastName} wins={player.wins}></Player>);
   return (
     <section className="PlayerList">
       <h1>Current participating players</h1>
-      <Player gamerTag={onePlayer.gamerTag} firstName={onePlayer.firstName} lastName={onePlayer.lastName} wins={onePlayer.wins}/>
+      {matches}
     </section>
   )
   
